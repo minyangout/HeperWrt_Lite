@@ -39,10 +39,9 @@ wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Mak
 # Dnsfilter
 #git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
 
-# homeproxy
-git clone --single-branch --depth 1 -b dev https://github.com/immortalwrt/homeproxy.git package/new/homeproxy
-rm -rf ./feeds/packages/net/sing-box
-cp -rf ../immortalwrt_pkg/net/sing-box ./feeds/packages/net/sing-box
+#添加homeproxy插件
+git clone https://github.com/douglarek/luci-app-homeproxy.git package/luci-app-homeproxy
+
 # OpenClash
 git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
 
