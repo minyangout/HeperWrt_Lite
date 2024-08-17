@@ -24,9 +24,7 @@
 # sed -i '10a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
 
 # 定时重启
-#cp -rf ../immortalwrt_luci/applications/luci-app-autoreboot ./feeds/luci/applications/luci-app-autoreboot
-#ln -sf ../../../feeds/luci/applications/luci-app-autoreboot ./package/feeds/luci/luci-app-autoreboot
-
+git clone https://github.com/zxl78585/luci-app-autoreboot.git package/luci-app-autoreboot
 # 动态DNS
 #sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
 #cp -rf ../openwrt-third/ddns-scripts_aliyun ./feeds/packages/net/ddns-scripts_aliyun
