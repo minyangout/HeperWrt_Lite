@@ -37,15 +37,15 @@ mkdir -p package/parted && \
 wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/parted/Makefile
 
 #compile package only
-make package/luci-app-diskman/compile V=99
+#make package/luci-app-diskman/compile V=99
 
 #compile
-make menuconfig
+#make menuconfig
 #choose LuCI ---> 3. Applications  ---> <*> luci-app-diskman..... Disk Manager interface for LuCI ----> save
-make V=99
+#make V=99
 
 # Dnsfilter
-git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
+#git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
 # Dnsproxy
 cp -rf ../OpenWrt-Add/luci-app-dnsproxy ./package/new/luci-app-dnsproxy
 
