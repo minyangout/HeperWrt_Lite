@@ -36,18 +36,28 @@ wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/applicatio
 mkdir -p package/parted && \
 wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/parted/Makefile
 
-#compile package only
-#make package/luci-app-diskman/compile V=99
-
-#compile
-#make menuconfig
-#choose LuCI ---> 3. Applications  ---> <*> luci-app-diskman..... Disk Manager interface for LuCI ----> save
-#make V=99
-
 # Dnsfilter
-#git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
+git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
+
 # Dnsproxy
-cp -rf ../OpenWrt-Add/luci-app-dnsproxy ./package/new/luci-app-dnsproxy
+# Take the x86_64 platform as an example
+tar xjf openwrt-sdk-22.03.5-x86-64_gcc-8.4.0_musl.Linux-x86_64.tar.xz
+# Go to the SDK root dir
+cd OpenWrt-sdk-*-x86_64_*
+# First run to generate a .config file
+make menuconfig
+./scripts/feeds update -a
+./scripts/feeds install -a
+# Get Makefile
+git clone --depth 1 --branch master --single-branch --no-checkout https://github.com/muink/luci-app-dnsproxy.git package/luci-app-dnsproxy
+pushd package/luci-app-dnsproxy
+umask 022
+git checkout
+popd
+# Select the package LuCI -> Applications -> luci-app-dnsproxy
+make menuconfig
+# Start compiling
+make package/luci-app-dnsproxy/compile V=99
 
 # homeproxy
 git clone --single-branch --depth 1 -b dev https://github.com/immortalwrt/homeproxy.git package/new/homeproxy
