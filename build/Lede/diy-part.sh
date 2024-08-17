@@ -46,9 +46,9 @@ git clone https://github.com/douglarek/luci-app-homeproxy.git package/luci-app-h
 #git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
 
 # sirpdboy
-git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-make menuconfig
-make package/luci-app-autotimeset/compile V=s
+#git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
+#make menuconfig
+#make package/luci-app-autotimeset/compile V=s
 
 
 # 后台IP设置
