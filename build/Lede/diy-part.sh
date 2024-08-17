@@ -23,32 +23,6 @@
 # sed -i '9a\msgstr "固件出处"' feeds/luci/modules/luci-base/po/zh-cn/base.po
 # sed -i '10a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
 
-# 定时重启
-git clone https://github.com/zxl78585/luci-app-autoreboot.git package/luci-app-autoreboot
-# 动态DNS
-#sed -i '/boot()/,+2d' feeds/packages/net/ddns-scripts/files/etc/init.d/ddns
-#cp -rf ../openwrt-third/ddns-scripts_aliyun ./feeds/packages/net/ddns-scripts_aliyun
-#ln -sf ../../../feeds/packages/net/ddns-scripts_aliyun ./package/feeds/packages/ddns-scripts_aliyun
-
-# DiskMan
-mkdir -p package/luci-app-diskman && \
-wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/applications/luci-app-diskman/Makefile -O package/luci-app-diskman/Makefile
-mkdir -p package/parted && \
-wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Makefile -O package/parted/Makefile
-
-# Dnsfilter
-#git clone --depth 1 https://github.com/kiddin9/luci-app-dnsfilter.git package/new/luci-app-dnsfilter
-
-#添加homeproxy插件
-git clone https://github.com/douglarek/luci-app-homeproxy.git package/luci-app-homeproxy
-
-# OpenClash
-#git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
-
-# sirpdboy
-#git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
-#make menuconfig
-#make package/luci-app-autotimeset/compile V=s
 
 
 # 后台IP设置
