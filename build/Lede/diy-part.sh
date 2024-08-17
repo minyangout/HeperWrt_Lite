@@ -43,7 +43,14 @@ wget https://raw.githubusercontent.com/lisaac/luci-app-diskman/master/Parted.Mak
 git clone https://github.com/douglarek/luci-app-homeproxy.git package/luci-app-homeproxy
 
 # OpenClash
-git clone --single-branch --depth 1 -b master https://github.com/vernesong/OpenClash.git package/new/luci-app-openclash
+mkdir package/luci-app-openclash
+cd package/luci-app-openclash
+git init
+git remote add -f origin https://github.com/vernesong/OpenClash.git
+git config core.sparsecheckout true
+echo "luci-app-openclash" >> .git/info/sparse-checkout
+git pull --depth 1 origin master
+git branch --set-upstream-to=origin/master master
 
 # sirpdboy
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset
